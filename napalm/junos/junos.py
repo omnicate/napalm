@@ -2391,7 +2391,7 @@ class JunOSDriver(NetworkDriver):
     def get_config(self, retrieve="all", full=False, sanitized=False):
         rv = {"startup": "", "running": "", "candidate": ""}
 
-        options = {"format": "text", "database": "candidate"}
+        options = {"format": "set", "database": "candidate"}
         sanitize_strings = {
             r"^(\s+community\s+)\w+(;.*|\s+{.*)$": r"\1<removed>\2",
             r'^(.*)"\$\d\$\S+"(;.*)$': r"\1<removed>\2",
